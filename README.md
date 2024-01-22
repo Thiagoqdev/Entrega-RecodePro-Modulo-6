@@ -1,2 +1,2 @@
 # Entrega-RecodePro-Modulo-6
-Projeto de desenvolvimento de uma API utilizando C#, e consumir usando um frontend com Next.
+Projeto para Criação de uma API usando C#, e consumir em um Front-end usando React-Next.
