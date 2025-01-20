@@ -1,0 +1,25 @@
+FROM node:23-alpine
+# Image base used to build NextJS (React) frontend
+
+WORKDIR /home/node/app
+
+COPY public /home/node/app
+COPY src /home/node/app
+COPY jsconfig.json /home/node/app
+COPY next.config.mjs /home/node/app
+COPY package.json /home/node/app
+COPY package-lock.json /home/node/app
+COPY tsconfig.json /home/node/app
+
+
+RUN <<EOF
+mkdir -p /home/node/app/node_modules
+chown -R node:node /home/node/app
+npm install
+EOF
+
+USER node
+
+EXPOSE 3000
+
+CMD [ "npm", "run", "dev" ]
